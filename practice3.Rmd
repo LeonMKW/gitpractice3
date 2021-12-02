@@ -1,0 +1,19 @@
+---
+title: "practive3"
+author: "MKW"
+date: "2021/12/2"
+output: html_document
+---
+
+```{r}
+data("mtcars")
+library(s20x)
+str(mtcars)
+
+fit <- lm(mpg ~., mtcars)
+
+summary(fit)
+plot(fit)
+normcheck(fit)
+```
+
