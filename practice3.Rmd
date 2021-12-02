@@ -14,6 +14,12 @@ fit <- lm(mpg ~., mtcars)
 
 summary(fit)
 plot(fit)
-normcheck(fit)
+
+bunch <- rnorm(150, mean = 0, sd = 5)
+class(bunch)
+
+library(tidyverse)
+bunch %>% enframe(., name = "year", value = "numbers") %>% ts(., start = 1949, frequency = 12) %>% plot(.)
+
 ```
 
