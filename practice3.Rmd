@@ -15,5 +15,8 @@ fit <- lm(mpg ~., mtcars)
 summary(fit)
 plot(fit)
 normcheck(fit)
+
+data("co2")
+plot(ts(co2))
 ```
 
