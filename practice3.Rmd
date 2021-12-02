@@ -16,7 +16,11 @@ summary(fit)
 plot(fit)
 normcheck(fit)
 
-data("co2")
-plot(ts(co2))
+co4.df <- read.table("CapeGrim.CO2.quarterly.txt", header = TRUE)
+##HW multiplicative
+co4.ts = ts(co4.df$CO2[1:68], frequency = 4, start = 2000)
+co4.multi.holtfit = HoltWinters(co4.ts, seasonal = "multiplicative")
+co4.multi.holtfit
+plot(co4.multi.holtfit)
 ```
 
